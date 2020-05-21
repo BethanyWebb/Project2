@@ -1,7 +1,5 @@
-USE burgers_db;
+USE university_db;
 
-INSERT INTO burgers (burgers_name) VALUES ('cheeseburger', TRUE);
-INSERT INTO burgers (burgers_name) VALUES ('baconator');
-INSERT INTO burgers (burgers_name) VALUES ('bigmac');
-INSERT INTO burgers (burgers_name) VALUES ('veggieburger');
-INSERT INTO burgers (burgers_name) VALUES ('swissburger');
+INSERT INTO university (first_name, last_name, email_address, nationality, highest_education, desired_country, student_visa)
+VALUES ("Jane", "Doe","missing@gmail.com","Swedish","Bachelors","Canada", true);
+

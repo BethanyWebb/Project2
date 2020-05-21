@@ -1,15 +1,18 @@
-CREATE DATABASE IF NOT EXISTS universities_db;
-USE universities_db;
+DROP TABLE IF EXISTS university_db;
+CREATE DATABASE IF NOT EXISTS university_db;
+USE university_db;
 
--- If the table already exists, remove it before trying to create the table again
-DROP TABLE IF EXISTS university;
 
--- Create the burgers table which will contain     id(int and is the primarykey), burger_name(varchar), devoured(boolean)
+
 CREATE TABLE university (
     id INT NOT NULL auto_increment,
-    university_name VARCHAR(100) NOT NULL,
-    university_country VARCHAR(100) NOT NULL,
-    university_city VARCHAR(100) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email_address VARCHAR(100) NOT NULL,
+    nationality VARCHAR(100) NOT NULL,
+    highest_education VARCHAR(100) NOT NULL,
+    desired_country VARCHAR(100) NOT NULL,
+    student_visa BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 
     
