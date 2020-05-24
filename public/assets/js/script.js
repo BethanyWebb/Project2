@@ -1,49 +1,82 @@
-$(function() {
-  // $(".enter_section").on("submit", function(event) {
-  //   event.preventDefault();
+//lines 2-41 are establishing our variables 
+// $(function() {
+//   $(".enter_section").on("submit", function(event) {
+//     event.preventDefault();
 
-  //   var newBurger = {
-  //     burger_name: $("#enter_text")
-  //       .val()
-  //       .trim(),
-  //     devoured: 0
-  //   };
+//     var firstName = {
+//       first_name: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
 
-  //   $.ajax("/api/burgers", {
+//     var lastName = {
+//       last_name: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
+//     var emailAddress = {
+//       email_address: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
+//     var nationality = {
+//       nationality: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
+//     var highestEducation = {
+//       highest_educaiton: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
+//     var desiredCounty = {
+//       desired_country: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
+//     var studentVisa = {
+//       student_visa: $("#enter_text")
+//         .val()
+//         .trim(),
+//     };
+
+
+//lines 45-52 changes and "burgers" to "university".  I added the variable newStudent for new students who input their informaiton.
+  //   $.ajax("/api/universities", {
   //     type: "POST",
-  //     data: newBurger
+  //     data: newStudent
   //   }).then(function() {
-  //     console.log("Added new burger");
+  //     console.log("Added new student");
   //     location.reload();
   //   });
   // });
 
-  // $(".eatburger").on("click", function(event) {
-  //   event.preventDefault();
 
-  //   var id = $(this).data("id");
-  //   var devouredState = {
-  //     devoured: 1
-  //   };
+//Lines 56-82 is the API Request
+  //const apiKey = "3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P";
 
-  //   $.ajax("/api/burgers/" + id, {
-  //     type: "PUT",
-  //     data: devouredState
-  //   }).then(function() {
-  //     console.log("Burger devoured");
-  //     location.reload();
-  //   });
-  // });
+// // Set endpoints
+// const endpoints = {
+//   translate: "",
+//   detect: "detect",
+//   Universities: "Universities"
+// };
 
-  // $(".trashburger").on("click", function(event) {
-  //   event.preventDefault();
+// // Abstract API request function
+// function makeApiRequest(endpoint, data, type, authNeeded) {
+//   url = "https://api.data.gov/ed/collegescorecard/v1/schools?api_key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P" + endpoint;
+//   url += "?key=" + apiKey;
 
-  //   var id = $(this).data("id");
+//   // If not listing universities, find alternative.
+//   if (endpoint !== endpoints.) {
+//     url += "&q=" + encodeURI(data.universities);
+//   }
 
-  //   // Send the DELETE request.
-  //   $.ajax({
-  //     type: "DELETE",
-  //     url: "/api/burgers/" + id
-  //   }).then(location.reload());
-  // });
-});
+// $.ajax({
+//     url:  "https://api.data.gov/ed/collegescorecard/v1/schools?api_key" + desiredCountry + "&key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P",
+//     method: "GET"
+//   }).then(function(response) {
+//     // console.log(response);
+// })
+    
+// }
