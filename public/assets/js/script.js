@@ -29,8 +29,8 @@
 //         .val()
 //         .trim(),
 //     };
-//     var desiredCounty = {
-//       desired_country: $("#enter_text")
+//     var desiredState = {
+//       desired_state: $("#enter_text")
 //         .val()
 //         .trim(),
 //     };
@@ -57,15 +57,14 @@
 
 // // Set endpoints
 // const endpoints = {
-//   translate: "",
+//   search: "",
 //   detect: "detect",
 //   Universities: "Universities"
 // };
 
 // // Abstract API request function
 // function makeApiRequest(endpoint, data, type, authNeeded) {
-//   url = "https://api.data.gov/ed/collegescorecard/v1/schools?api_key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P" + endpoint;
-//   url += "?key=" + apiKey;
+//   url = "https://api.data.gov/ed/collegelist/v1/schools?api_key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P"
 
 //   // If not listing universities, find alternative.
 //   if (endpoint !== endpoints.) {
@@ -73,10 +72,16 @@
 //   }
 
 // $.ajax({
-//     url:  "https://api.data.gov/ed/collegescorecard/v1/schools?api_key" + desiredCountry + "&key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P",
+//     url:  "https://api.data.gov/ed/collegeai-college-list/v1/schools?api_key" + desiredState + "&key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P",
 //     method: "GET"
 //   }).then(function(response) {
 //     // console.log(response);
 // })
     
 // }
+
+//Next we need a function that will take the state selected from the dropdown on our forum and make a call to the api for universities in that state.
+// $(function(desiredState) {
+//   $(".enter_section").on("submit", function(event) {
+//    event.preventDefault();
+//    console.log(list of Universities)
