@@ -13,16 +13,16 @@ router.get("/", function(req, res) {
     res.render("index", hdbrsObj);
   });
 
-  // router.post("/api/universities", function(req, res) {
-  //   university.insertOne(
-  //     ["first_name", "last_name", "email_address", "nationality", "highest_education", "desired_country", "student_visa" ],
-  //     [req.body.first_name, req.body.last_name, req.body.email_address, req.body.nationality, req.body.highest_education, req.body.desired_country, req.body.student_visa ],
-  //     function(result) {
-  //       // Send back the ID of new burger
-  //       res.json({ id: result.insertId });
-  //     }
-  //   );
-  // });
+  router.post("/api/universities", function(req, res) {
+    university.insertOne(
+      ["first_name", "last_name", "email_address", "nationality", "highest_education", "desired_country", "student_visa" ],
+      [req.body.first_name, req.body.last_name, req.body.email_address, req.body.nationality, req.body.highest_education, req.body.desired_country, req.body.student_visa ],
+      function(result) {
+        // Send back the ID of new burger
+        res.json({ id: result.insertId });
+      }
+    );
+  });
 
   // router.put("/api/burgers/:id", function(req, res) {
   //   var condition = "id = " + req.params.id;
