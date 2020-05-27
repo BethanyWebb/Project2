@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 $(document).ready(function(){
   
   //Variables established for corresponding search fields
@@ -67,54 +66,4 @@ function findUniversity() {
 //     $(".university").append(card);  
 // }
 
-=======
-$(function() {
-  // $(".enter_section").on("submit", function(event) {
-  //   event.preventDefault();
 
-  //   var newBurger = {
-  //     burger_name: $("#enter_text")
-  //       .val()
-  //       .trim(),
-  //     devoured: 0
-  //   };
-
-  //   $.ajax("/api/burgers", {
-  //     type: "POST",
-  //     data: newBurger
-  //   }).then(function() {
-  //     console.log("Added new burger");
-  //     location.reload();
-  //   });
-  // });
-
-  // $(".eatburger").on("click", function(event) {
-  //   event.preventDefault();
-
-  //   var id = $(this).data("id");
-  //   var devouredState = {
-  //     devoured: 1
-  //   };
-
-  //   $.ajax("/api/burgers/" + id, {
-  //     type: "PUT",
-  //     data: devouredState
-  //   }).then(function() {
-  //     console.log("Burger devoured");
-  //     location.reload();
-  //   });
-  // });
-
-  // $(".trashburger").on("click", function(event) {
-  //   event.preventDefault();
-
-  //   var id = $(this).data("id");
-
-  //   // Send the DELETE request.
-  //   $.ajax({
-  //     type: "DELETE",
-  //     url: "/api/burgers/" + id
-  //   }).then(location.reload());
-  // });
-});
->>>>>>> c24cec60ceebb59f46983a3c9c21c1e43ba7b7d8
