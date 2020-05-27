@@ -1,87 +1,68 @@
-//lines 2-41 are establishing our variables 
-// $(function() {
-//   $(".enter_section").on("submit", function(event) {
-//     event.preventDefault();
+$(document).ready(function(){
+  
+  //Variables established for corresponding search fields
+  var desiredCountry = "";
+  var searchCA = "";
+  var searchUSA = "";
+  
 
-//     var firstName = {
-//       first_name: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
+  //function corresponding with that search 
 
-//     var lastName = {
-//       last_name: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
-//     var emailAddress = {
-//       email_address: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
-//     var nationality = {
-//       nationality: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
-//     var highestEducation = {
-//       highest_educaiton: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
-//     var desiredState = {
-//       desired_state: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
-//     var studentVisa = {
-//       student_visa: $("#enter_text")
-//         .val()
-//         .trim(),
-//     };
+  $("#desiredcountry").on("click", function() {
+    // console.log("desired country");
+    desiredCountry = "Canada";
+    searchCA = "Canada";
+})
+
+$("#desiredcountry").on("click", function() {
+  // console.log("desired country");
+  desiredCountry = "USA";
+  searchUSA = "USA";
+})
 
 
-//lines 45-52 changes and "burgers" to "university".  I added the variable newStudent for new students who input their informaiton.
-  //   $.ajax("/api/universities", {
-  //     type: "POST",
-  //     data: newStudent
-  //   }).then(function() {
-  //     console.log("Added new student");
-  //     location.reload();
-  //   });
-  // });
+  $.ajax({
+    url:"http://universities.hipolabs.com/search?country+" desiredCountry,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  });
 
+//Get universities function 
 
-//Lines 56-82 is the API Request
-  //const apiKey = "3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P";
-
-// // Set endpoints
-// const endpoints = {
-//   search: "",
-//   detect: "detect",
-//   Universities: "Universities"
-// };
-
-// // Abstract API request function
-// function makeApiRequest(endpoint, data, type, authNeeded) {
-//   url = "https://api.data.gov/ed/collegelist/v1/schools?api_key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P"
-
-//   // If not listing universities, find alternative.
-//   if (endpoint !== endpoints.) {
-//     url += "&q=" + encodeURI(data.universities);
-//   }
-
-// $.ajax({
-//     url:  "https://api.data.gov/ed/collegeai-college-list/v1/schools?api_key" + desiredState + "&key=3Qehhm2UOanyHsXtb95d4A5WMv2DtdRbnna4Ya5P",
-//     method: "GET"
-//   }).then(function(response) {
-//     // console.log(response);
-// })
+function findUniversity() {
     
+  //debugger;
+  $.getJSON('http://universities.hipolabs.com/search?country+' desiredCountry, function(json) {
+
+      var allResponse = (JSON.stringify(json));
+
+      console.log(allResponse);
+
+      var JSONObject = JSON.parse(allResponse);
+      var allUniversities = JSONObject["text"];
+      $('#outputText').val(allUniversities);
+
+  });
+
+
+//create card with informatin found in api search 
+
+// Create header using searchSel value we can use this if need be. 
+// $("<h3>").text("Universities that may interest you" + searchSel + "?").appendTo("#ID for this section");
+        
+// for (var i = 0; i < 6; i++) {
+    
+//     var card = $("<div>").addClass("card col-lg-2 col-sm-4 col-xs-6");
+//     var cardBody = $("<div>").addClass("card-body d-flex flex-column justify-content-start align-items-stretch");
+    
+//     var thumbnail = $("<img>").addClass("card-img-top").attr("src", response.items[i].volumeInfo.imageLinks.thumbnail);
+//     var universityName = $("<h5>").addClass("card-title").text(response.items[i].volumeInfo.title);
+//     var preview = $("<a>").addClass("card-text").text("Preview");
+//     $(preview).attr({"href": response.items[i].volumeInfo.previewLink, "target": "_blank"});
+
+//     $(cardBody).append(university, preview);
+//     $(card).append(thumbnail, cardBody);
+//     $(".university").append(card);  
 // }
 
-//Next we need a function that will take the state selected from the dropdown on our forum and make a call to the api for universities in that state.
-// $(function(desiredState) {
-//   $(".enter_section").on("submit", function(event) {
-//    event.preventDefault();
-//    console.log(list of Universities)
